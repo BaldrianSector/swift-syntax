@@ -37,4 +37,4 @@ guard let value = optional else { return } // Guard
 
 ---
 
-**Tutorial:** [Learn Swift in 1 Hour](https://www.youtube.com/watch?v=n5X_V81OYnQ) by Paul Hudson
+**Tutorial:** [Learn the Essentials of Swift in one hour](https://www.youtube.com/watch?v=n5X_V81OYnQ) by Paul Hudson
