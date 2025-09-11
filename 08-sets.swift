@@ -7,7 +7,7 @@ import Foundation
 
 // Set automatically removes duplicates and has no specific order
 var numbers = Set([1, 1, 3, 5, 7, 9])
-print("Numbers set: \(numbers)")  // Duplicates removed, order may vary
+print("Numbers set: \(numbers)")  // Duplicates removed, order may vary on every run
 
 let colors = Set(["Red", "Blue", "Green", "Blue", "Red"])
 print("Colors set: \(colors)")   // Duplicates removed
@@ -29,6 +29,9 @@ print("Before: \(numbers)")
 numbers.insert(10)
 print("After inserting 10: \(numbers)")
 
+// Notice that there is no (at:) method for sets since they are unordered
+// Also there is no append() method for sets since there are no indexes
+
 // Try to insert existing element (no change)
 numbers.insert(5)
 print("After trying to insert 5 again: \(numbers)")
@@ -44,9 +47,9 @@ let largeSet = Set(1...1000000)
 print("\nFast contains check on large set:")
 print("Contains 500000: \(largeSet.contains(500000))")  // Instant!
 
-// Arrays would be much slower for this operation
-let largeArray = Array(1...1000000)
-print("Array contains check (slower): \(largeArray.contains(500000))")
+// Arrays would be much slower for this operation, the following line is commented out to avoid long execution time
+// let largeArray = Array(1...1000000)
+// print("Array contains check (slower): \(largeArray.contains(500000))")
 
 // MARK: - Set Operations
 

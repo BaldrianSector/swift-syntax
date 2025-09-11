@@ -6,36 +6,41 @@ import Foundation
 // MARK: - Basic Enums
 
 // Enum ensures our value is one of a specific set
-enum Direction {
-    case north, south, east, west
+enum Weekday {
+    case monday, tuesday, wednesday, thursday, friday
 }
 
 // Create and use enum values
-var currentDirection = Direction.north
-print("Current direction: \(currentDirection)")
+var currentDay = Weekday.monday
+print("Current day: \(currentDay)")
 
 // Once type is known, you can use shorthand
-currentDirection = .east
-print("New direction: \(currentDirection)")
+currentDay = .tuesday
+print("New day: \(currentDay)")
 
 // MARK: - Enum with Switch
 
-func describe(direction: Direction) -> String {
-    switch direction {
-    case .north:
-        return "Going up"
-    case .south:
-        return "Going down"
-    case .east:
-        return "Going right"
-    case .west:
-        return "Going left"
+func describe(day: Weekday) -> String {
+    switch day {
+    case .monday:
+        return "Start of the work week"
+    case .tuesday:
+        return "Second day of the work week"
+    case .wednesday:
+        return "Third day of the work week"
+    case .thursday:
+        return "Fourth day of the work week"
+    case .friday:
+        return "Last day of the work week"
     }
 }
 
-print("\nDirection descriptions:")
-print("North: \(describe(direction: .north))")
-print("East: \(describe(direction: .east))")
+print("\nDay descriptions:")
+print("Monday: \(describe(day: .monday))")
+print("Tuesday: \(describe(day: .tuesday))")
+print("Wednesday: \(describe(day: .wednesday))")
+print("Thursday: \(describe(day: .thursday))")
+print("Friday: \(describe(day: .friday))")
 
 // MARK: - Enum with Raw Values
 

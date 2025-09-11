@@ -109,7 +109,7 @@ default:
 
 // Format: condition ? "value if true" : "value if false"
 let playerScore = 1500
-let message = playerScore > 1000 ? "High Score!" : "Keep trying"
+let message = playerScore >= 1000 ? "High Score!" : "Keep trying"
 print(message)
 
 // More examples
@@ -186,6 +186,6 @@ func checkLogin(username: String, password: String, isActive: Bool) -> String {
 }
 
 print("\nLogin tests:")
-print(checkLogin(username: "admin", password: "password123", isActive: true))
-print(checkLogin(username: "user", password: "wrong", isActive: true))
-print(checkLogin(username: "", password: "", isActive: true))
+print("Checking login with admin credentials: \(checkLogin(username: "admin", password: "password123", isActive: true))")
+print("Checking login with user credentials: \(checkLogin(username: "user", password: "wrong", isActive: true))")
+print("Checking login with empty credentials: \(checkLogin(username: "", password: "", isActive: true))")

@@ -6,13 +6,21 @@ import Foundation
 // MARK: - Creating Arrays
 
 // Array with initial values
-var colors = ["Red", "Yellow", "Blue"]
-let numbers = [1, 3, 5, 7, 9]
-var scores = [2.5, 3.6, 4.0, 5.2]
+var colors = ["Red", "Green", "Blue"] // Array of Strings
+let numbers = [1, 3, 5, 7, 9] // Array of Integers
+var readings = [2.5, 3.6, 4.0, 5.2] // Array of Doubles
+var isPassed = [true, false, true, false] // Array of Booleans
+
+// Be aware that Swift arrays are type-safe - all elements must be of the same type
+// colors.append(42)  // ❌ Error: Cannot add Int to String array
 
 print("Colors: \(colors)")
 print("Numbers: \(numbers)")
-print("Scores: \(scores)")
+print("Readings: \(readings)")
+
+// Mixed type array using 'Any' type (not recommended unless necessary)
+let mixedArray: [Any] = ["Hello", 42, 3.14, true]
+print("Mixed Array: \(mixedArray)")
 
 // MARK: - Accessing Array Elements
 
@@ -49,14 +57,16 @@ print("\nAdding elements:")
 print("Colors before: \(colors)")
 
 // Add single element to end
-colors.append("Green")
-print("After adding Green: \(colors)")
+colors.append("Yellow")
+print("After adding Yellow: \(colors)")
 
 // Add multiple elements
+// Notice that (contentsOf:) takes an array as input
 colors.append(contentsOf: ["Purple", "Orange"])
 print("After adding Purple and Orange: \(colors)")
 
 // Insert at specific position
+// Notice that (at:) takes an index as input
 colors.insert("Pink", at: 1)
 print("After inserting Pink at index 1: \(colors)")
 
@@ -131,6 +141,7 @@ print("\nArray transformation:")
 print("Original: \(originalNumbers)")
 
 // Map: transform each element
+// $0 refers to the current element in the closure
 let doubled = originalNumbers.map { $0 * 2 }
 let squared = originalNumbers.map { $0 * $0 }
 print("Doubled: \(doubled)")
@@ -156,56 +167,3 @@ print("Empty string array count: \(emptyStringArray.count)")
 emptyStringArray.append("First item")
 emptyStringArray.append("Second item")
 print("After adding items: \(emptyStringArray)")
-
-// MARK: - Practical Examples
-
-// Shopping list management
-var shoppingList = ["Milk", "Eggs", "Bread"]
-print("\nShopping List Manager:")
-print("Initial list: \(shoppingList)")
-
-// Add items
-shoppingList.append("Apples")
-shoppingList.insert("Butter", at: 1)
-print("After adding items: \(shoppingList)")
-
-// Remove completed items
-if let milkIndex = shoppingList.firstIndex(of: "Milk") {
-    shoppingList.remove(at: milkIndex)
-    print("Bought milk! Updated list: \(shoppingList)")
-}
-
-// Check remaining items
-print("Items left to buy: \(shoppingList.count)")
-for (index, item) in shoppingList.enumerated() {
-    print("  \(index + 1). \(item)")
-}
-
-// High score tracking
-var highScores = [1250, 1100, 1050, 980, 890]
-let newScore = 1175
-
-print("\nHigh Score System:")
-print("Current high scores: \(highScores)")
-print("New score: \(newScore)")
-
-// Insert new score in correct position
-var inserted = false
-for (index, score) in highScores.enumerated() {
-    if newScore > score {
-        highScores.insert(newScore, at: index)
-        inserted = true
-        break
-    }
-}
-
-if !inserted {
-    highScores.append(newScore)
-}
-
-// Keep only top 5 scores
-if highScores.count > 5 {
-    highScores = Array(highScores.prefix(5))
-}
-
-print("Updated high scores: \(highScores)")

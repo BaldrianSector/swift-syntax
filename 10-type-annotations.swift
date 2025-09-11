@@ -6,20 +6,22 @@ import Foundation
 // MARK: - Basic Type Annotations
 
 // Using colon to enforce specific types
-var number: Double = 0          // Double instead of Int
-var isEnabled: Bool = true      // Explicit Bool
-var message: String = "Hello"   // Explicit String
+let score: Double = 0           // Double instead of Int
+let player: String = "Roy"      // Explicit String
+let luckyNumber: Int = 13       // Explicit Int
+let isEnabled: Bool = true      // Explicit Bool
 
-print("Number: \(number)")
+print("Score: \(score)")
+print("Player: \(player)")
+print("Lucky Number: \(luckyNumber)")
 print("Enabled: \(isEnabled)")
-print("Message: \(message)")
 
 // MARK: - Collection Type Annotations
 
 // Array type annotations
-var colors: Array<String> = ["Red", "Yellow", "Blue"]
-var albums: [String] = ["For Eva", "Time"]  // Shorter syntax
-var numbers: [Int] = [1, 2, 3, 4, 5]
+let colors: Array<String> = ["Red", "Yellow", "Blue"]
+let albums: [String] = ["For Eva", "Time"]  // Shorter syntax for array of type strings
+let numbers: [Int] = [1, 2, 3, 4, 5] // Shorter syntax for array of type integers
 
 print("\nCollections:")
 print("Colors: \(colors)")
@@ -27,16 +29,21 @@ print("Albums: \(albums)")
 print("Numbers: \(numbers)")
 
 // Dictionary type annotations
-var user: [String: String] = ["id": "@twostraws", "name": "Paul"]
-var scores: [String: Int] = ["Math": 95, "English": 88]
+let user: [String: String] = ["id": "@twostraws", "name": "Paul"]
+let scores: [String: Int] = ["Math": 95, "English": 88]
 
 print("User: \(user)")
 print("Scores: \(scores)")
 
+// Set type annotations
+
+let uniqueNumbers: Set<Int> = [1, 2, 3, 4, 5, 5, 5] // Duplicates removed
+print("Unique Numbers: \(uniqueNumbers)")
+
 // MARK: - Empty Collections with Types
 
 // When creating empty collections, types help Swift understand what you want
-var userName: [String] = [String]()     // Explicit version - good for clarity
+var userName: [String] = [String]()     // Explicit empty array - good for clarity
 var userNames = [String]()              // Inferred version - more common
 
 var emptyScores: [String: Int] = [:]    // Empty dictionary
@@ -56,6 +63,14 @@ print("After adding items:")
 print("UserNames: \(userNames)")
 print("Scores: \(emptyScores)")
 
+// Values of enums have the same type as the enum itself
+enum UIStyle {
+    case light, dark, system
+}
+
+var style: UIStyle = .light
+print("\nUI Style: \(style)")
+
 // MARK: - When Type Annotations Are Useful
 
 // 1. When you want a different type than what Swift would infer
@@ -63,8 +78,8 @@ let percentage: Double = 85    // Without annotation, this would be Int
 let temperature: Float = 98.6  // Specifically want Float, not Double
 
 // 2. When creating empty collections
-var todoList: [String] = []
-var gameScores: [String: Int] = [:]
+var todoList: [String] = [] // Empty array of strings
+var gameScores: [String: Int] = [:] 
 
 // 3. When the type isn't clear from context
 var result: String

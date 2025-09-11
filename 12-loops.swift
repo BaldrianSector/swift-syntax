@@ -5,7 +5,7 @@ import Foundation
 
 // MARK: - For-In Loops
 
-// Loop through arrays
+// Loop through arrays once for each item
 let fruits = ["Apple", "Banana", "Cherry"]
 
 print("Fruits I like:")
@@ -23,6 +23,12 @@ for i in 1...5 {
 print("\nCounting 0 to 4:")
 for i in 0..<5 {
     print("Index: \(i)")
+}
+
+// To exclude the index variable, use underscore
+print("\nRepeating action 3 times:")
+for _ in 1...3 {
+    print("Hello!")
 }
 
 // MARK: - Loops with Index
@@ -62,7 +68,7 @@ print("Battle ended")
 
 // MARK: - Repeat-While Loops
 
-// Executes at least once, then checks condition
+// repeat-while loops are used when you need to guarantee the loop body executes at least once
 var attempts = 0
 
 print("\nTrying to connect:")
@@ -105,7 +111,7 @@ for i in 1...3 {
 let prices = [19.99, 25.50, 12.75, 8.99]
 var total = 0.0
 
-print("Calculating shopping cart total:")
+print("\nCalculating shopping cart total:")
 for (index, price) in prices.enumerated() {
     total += price
     print("Item \(index + 1): $\(String(format: "%.2f", price))")

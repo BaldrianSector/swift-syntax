@@ -136,7 +136,7 @@ print("Total: \(formatCurrency(tipResult.total))")
 
 // Game functions
 func rollDice(sides: Int = 6) -> Int {
-    return Int.random(in: 1...sides)
+    Int.random(in: 1...sides)
 }
 
 func playRound(playerName: String) -> String {

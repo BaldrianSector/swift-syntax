@@ -6,6 +6,8 @@ import Foundation
 // MARK: - Creating Dictionaries
 
 // Dictionary with string keys and string values
+// Dictionaries are unordered collections of items noted by key-value pairs in square brackets 
+// This is unlike Python dictionaries and JavaScript objects that use curly braces
 let employee = [
     "name": "Taylor",
     "job": "Singer",
@@ -20,7 +22,7 @@ print("Employee dictionary: \(employee)")
 print("\nAccessing values:")
 print("Name: \(employee["name", default: "Unknown"])")
 print("Job: \(employee["job", default: "Unknown"])")
-print("Age: \(employee["age", default: "Unknown"])")  // Key doesn't exist
+print("Age: \(employee["age", default: "Unknown"])")  // Key doesn't exist will return "Unknown" as fallback
 
 // Without default (returns optional)
 if let name = employee["name"] {
