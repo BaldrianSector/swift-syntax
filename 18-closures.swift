@@ -3,6 +3,8 @@
 
 import Foundation
 
+// MARK: - Defining and using closures
+
 let sayHello = {
     print("Hello!")
 }

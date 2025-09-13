@@ -31,7 +31,7 @@ onlyT = team.filter { $0.hasPrefix("T") } // $0 is the first parameter, $1 is th
 
 print(onlyT)
 
-// Mark: - Using shorthand parameter names
+// MARK: - Using shorthand parameter names
 
 let numbers = [1, 2, 3, 4, 5]
 
@@ -46,7 +46,7 @@ let squaredShorthand = numbers.map { $0 * $0 }
 print(squared)          // [1, 4, 9, 16, 25]
 print(squaredShorthand) // [1, 4, 9, 16, 25]
 
-// Mark: - Multiple parameter closures
+// MARK: - Multiple parameter closures
 
 // When a closure has multiple parameters, we can still use trailing closure syntax and shorthand argument names
 let sortedTeam = team.sorted { $0 < $1 } // Sort in ascending order

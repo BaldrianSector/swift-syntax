@@ -1,7 +1,7 @@
 // 22-property-observers.swift
 // Code that runs when a property changes
 
-// Mark: Adding observers to a struct
+// MARK: - Adding observers to a struct
 
 struct Game {
     var score = 0 {
