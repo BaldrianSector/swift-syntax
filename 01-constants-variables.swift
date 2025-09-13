@@ -66,9 +66,17 @@ let firstName = "Taylor"
 let lastName = "Swift"
 let fullName = "\(firstName) \(lastName)"
 
-// Use descriptive names
+// Use descriptive names without using space and special characters
+// Also avoid single-letter names except for loop counters (i, j, k)
 let maximumNumberOfLoginAttempts = 10
 var currentLoginAttempt = 0
+
+// Examples of bad naming
+// let x = "data"           // ❌ Not descriptive and single letter
+// let user_age = 30        // ❌ Avoid underscores
+// var score$ = 100         // ❌ Avoid special characters
+// let 2ndPlayer = "Alice"  // ❌ Cannot start with a number
+// let class = "Math"       // ❌ 'class' is a reserved keyword
 
 print("\nUser: \(fullName)")
 print("Login attempts: \(currentLoginAttempt)/\(maximumNumberOfLoginAttempts)")

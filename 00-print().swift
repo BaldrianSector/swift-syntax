@@ -16,10 +16,10 @@ print("Name: " + name + ", Age: " + String(age)) // String concatenation using +
 print("Name:", name, ", Age:", age) // Print with multiple arguments separated by commas
 print("Name: \(name), Age: \(age)\n") // String interpolation similar to template literals in JavaScript or f-strings in Python
 
-// Using terminator to change the default newline behavior
+// Using terminator to change the default newline behavior after a print statement
 print("This is the first line.", terminator: " ")
-print("This is the second line on the same line.\n")
-print("This is the third line after a newline.\n") // no \n
+print("This is the second line on the same line.\n") // but with an extra newline
+print("This is the third line after two newlines.\n") // with another extra newline
 
 // Using separator to change the default space behavior
 print("Apple", "Banana", "Cherry", separator: ", ") // Custom separator
