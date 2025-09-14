@@ -1,5 +1,5 @@
 // 27-protocols.swift
-// Protocols define a blueprint of methods and properties that conforming types must implement
+// Protocols define a blueprint of methods and properties that children types must implement
 
 // MARK: - Defining and Conforming to Protocols
 
