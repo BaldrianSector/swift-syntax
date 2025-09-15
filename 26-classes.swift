@@ -1,16 +1,14 @@
 // 26-classes.swift
-// Define your own classes with properties and methods
+// Classes are custom data types with properties and methods
 
-// MARK: - Defining a Class
+// MARK: - Introduction to Classes
 
 // Classes are similar to structs but have additional features
+// They have 5 key differences from strucs.
 
-// They have 5 key differences from structs:
-// 1. Inheritance: Classes can inherit from other classes, gaining their properties and methods (like Developer inheriting from Employee)
-// 2. Reference Types: Classes are passed by reference, so multiple variables can point to the same instance (unlike structs which are copied)
-// 3. Deinitializers: Classes can have deinitializers that run when instances are destroyed (structs cannot)
-// 4. Type Casting: You can check and interpret the type of a class instance at runtime
-// 5. Reference Counting: Swift uses Automatic Reference Counting (ARC) to manage memory for class instances
+// MARK: - 1. Inheritance
+// Classes can inherit from other classes, gaining their properties and methods 
+// Like a Developer class inheriting from an Employee class
 
 // Define a base/parent class
 class Employee {
@@ -31,7 +29,7 @@ class Developer: Employee {
         print("I'm coding for \(hours) hours.")
     }
 
-    override func printSummary() {
+    override func printSummary() { // Override the printSummary method from Employee
         print("I spend \(hours) hours a day fighting bugs.")
     }
 }
@@ -40,6 +38,11 @@ let novall = Developer(hours: 8)
 novall.work() // From Developer
 novall.printSummary() // From Developer overrides Employee printSummary() method
 
+// MARK: - 2. Custom Initializers
+
+// Swift will never make a generated initializer for a class that has a parent class. 
+// You must always create your own initializers for classes that have a parent class.
+// If a subclass has no custom initializer, it inherits all of its parent's initializers.
 
 class Vehicle {
     let isElectric: Bool
@@ -70,7 +73,9 @@ class Car: Vehicle {
     }
 }
 
-// MARK: - Classes are Reference Types (unlike structs which are value types)
+// MARK: - 3. Reference Types
+
+// Classes are passed by reference, so multiple variables can point to the same instance (unlike structs which are copied)
 
 class Actor {
     var name = "Nicholas Cage"
@@ -104,8 +109,9 @@ print("--- After changing structActor2 to Tom Cruise ---")
 print("Struct Actor 1: \(structActor1.name)") // Nicholas Cage (unchanged)
 print("Struct Actor 2: \(structActor2.name)") // Tom Cruise
 
-// MARK: - Deinitializer example
+// MARK: - 4. Deinitializer
 
+// Classes can have a deinitializer, which runs when the last strong reference to an instance is destroyed (deallocated from memory)
 class Site {
     let id: Int
 
@@ -124,8 +130,10 @@ for i in 1...3 {
     print("Site \(site.id): I'm in control!")
 }
 
-// MARK: - Additional Class Behavior: Modifying Properties with 'let' Instances
+// MARK: - 5. Modifying Properties with 'let' Instances
 
+// Classes can have their properties modified even when the instance is declared with 'let'
+// This is unlike structs which are immutable when declared with 'let'
 class Singer {
     var name = "Adele"
 }
