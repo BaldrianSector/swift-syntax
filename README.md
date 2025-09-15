@@ -25,10 +25,10 @@ Collection of Swift files demonstrating core syntax concepts from Paul Hudson's 
 
 ```swift
 let name = "John"              // Constant
-var age: Int = 25             // Variable with type annotation
-let numbers = [1, 2, 3]       // Array
+var age: Int = 25              // Variable with type annotation
+let numbers = [1, 2, 3]        // Array of integers
 let person = ["name": "John"]  // Dictionary
-func greet() -> String { }     // Function
+func greet() -> String { }     // Function returning a string
 struct Person { }              // Struct
 class Vehicle { }              // Class
 var optional: String?          // Optional
